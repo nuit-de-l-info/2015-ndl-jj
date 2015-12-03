@@ -23,7 +23,15 @@ jQuery(document).ready(function($) {
       // Texte du point
       title: "Vous êtes ici"
       });
+     maPosition(position);
     }
     navigator.geolocation.getCurrentPosition(hasPosition);
    }
+
+  function maPosition(position) {
+    latitude = position.coords.latitude;
+    longitude = position.coords.longitude;
+    $('#latitude').val(latitude);
+    $('#longitude').val(longitude);
+  }
 });

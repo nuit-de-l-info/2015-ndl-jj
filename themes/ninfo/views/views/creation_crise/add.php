@@ -66,10 +66,12 @@
 						   <input class="form-control" type="text" id="twitter" name="twitter" value="<?php echo $crisis_twitter;?>" placeholder="@nom_prenom"/>
 						</div>
 					</div>
+					<input type="hidden" id="latitude" name="latitude"/>
+					<input type="hidden" id="longitude" name="longitude"/>
 					<div class="row">
-						<div class="form-group col-xs-4">
-							<button type="submit" class="btn btn-block btn-success" name="ajouter_crise" value="sent">
-		                    Ajouter crise
+						<div class="form-group col-xs-4 col-sm-4">
+							<button type="submit" class="btn btn-default btn-success" name="ajouter_crise" value="sent">
+		                    	Ajouter crise
 		                	</button>
 	                	</div>
                 	</div>
