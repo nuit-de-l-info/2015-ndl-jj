@@ -17,13 +17,17 @@
                 </thead>
                 <tbody>
                     <?php foreach($crises as $crise) : ?>
+                    <?php if($crise->est_validee == 0) : ?>
                         <tr class="<?php if( !$crise->est_validee){  echo 'warning'; }?>" >
                             <td><?= $crise->nom; ?></td>
                             <td><?= $crise->hashtag; ?></td>
-                            <td><?= $crise->categorie; ?></td>
+                            <td><?= $crise->libelle_categorie; ?></td>
                             <td>lat:<?= $crise->latitude; ?> long: <?= $crise->longitude; ?></td>
                             <td><?= $crise->rayon_en_metres; ?> m</td>
-                             <td><a class="btn btn-default" href="<?= site_url('admin/crise/valider/' . $crise->id); ?>">Valider</a></td>                        </tr>
+                             <td><a class="btn btn-default" href="<?= site_url('/index.php/admin/crise-valider/' . $crise->id); ?>">Valider</a>
+                             </td>
+                        </tr>
+                    <?php endif; ?>
                     <?php endforeach; ?>
                 </tbody>
             </table>

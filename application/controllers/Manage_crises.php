@@ -18,6 +18,7 @@ class Manage_crises extends MY_Controller
 	{
 		parent::__construct();
 		$this->load->model('crise_model');
+		$this->load->model('categorie_model');
 
 		$this->load->library('form_validation');
 		$this->load->library('email');
@@ -32,7 +33,17 @@ class Manage_crises extends MY_Controller
 	{
 
 		$this->data->crises =  $this->crise_model->get_all();
-
+		$this->data->categories = $this->categorie_model->get_all();
+		
+		foreach($this->data->crises as $crise)
+		{
+			foreach($this->data->categories as $categorie)
+			{
+			if($crise->categorie == $categorie->id)
+				$crise->libelle_categorie = $categorie->libelle;
+			
+			}
+		}
 
 		$this->template->set('page_title', 'Gestion des crises à valider');
 		$this->template->set_layout('manage');
@@ -201,7 +212,7 @@ class Manage_crises extends MY_Controller
 */
 
 	public function validate($id_crise){
-		if($this->crise_model->get_once_by_id($id_crise)){
+		if($this->crise_model->get($id_crise)){
 			$data = array(	
 				'est_validee' => 1
 			);
@@ -210,7 +221,7 @@ class Manage_crises extends MY_Controller
 		}else{
 			alert("Une erreur s'est produite lors de la validation de la crise.", 'error', true);
 		}
-		redirect('admin/choisir-crise-a-valider');
+		redirect('/index.php/admin/choisir-crise-a-valider');
 	}
 
 /*
