@@ -11,4 +11,29 @@ class Crise_model extends MY_Model
 		parent::__construct();
 	}
 
+	/**
+	 * Presenter de Crise_model
+	 * 
+	 * @param object &$crise La crise à Presenter
+	 * @return void
+	 */
+	protected function _presenter(&$crise)
+	{
+		if (is_array($crise))
+		{
+			return $this->_collection_presenter($crise);
+		}
+
+		if (empty($crise))
+		{
+			$crise = false;
+		}
+		else
+		{
+			$crise->url = site_url('detail-crise/'.$crise->id);
+		}
+
+		return;
+	}
+
 }
