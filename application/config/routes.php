@@ -102,6 +102,8 @@ $route['mon-compte'] = 'account/update';
 
 /*CRISE*/
 $route['detail-crise/(:num)'] = 'detail_crise/index/$1';
+$route['vote-plus/(:num)/(:num)'] = 'detail_crise/plus/$1/$2';
+$route['vote-moins/(:num)/(:num)'] = 'detail_crise/moins/$1/$2';
 
 /***** ADMIN *****/
 $route['admin'] = 'manage';
