@@ -10,16 +10,11 @@ class Detail_crise extends MY_Controller {
         $this->load->model('commentaire_model', 'commentaire');
         $this->load->model('crise_model', 'crise');
 
-        $this->data->crise = $this->crise->get($index);
-        $this->data->commentaire = $this->commentaire->get_commentaires_avec_crise($index);
-
-        var_dump($this->data);
-
-        //$this->load->view('home');
-
-        //if($this->user_lib->connected()){
-
-        //}
+        if($this->data->crise = $this->crise->get($index)) {
+        
+            $this->data->commentaire = $this->commentaire->get_commentaires_avec_crise($index);
+            
+        }
 
         $this->template->set_layout('default')
             ->build('views/detail_crise/detail_crise', $this->data);
@@ -28,7 +23,7 @@ class Detail_crise extends MY_Controller {
 
 
     public function error(){
-    	alert('Vous n\'avez pas accès à cette page, il faut être connecté','error',true);
-    	$this->index();
+        alert('Vous n\'avez pas accès à cette page, il faut être connecté','error',true);
+        $this->index();
     }
 }
