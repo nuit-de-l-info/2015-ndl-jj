@@ -23,15 +23,18 @@
 							<select class="form-control" id="type_crise">
 								<!-- foreach sur le tableau des catégories -->
 								<?php foreach ($categories as $categorie) : ?>
-								<option value="<?php echo $categorie; ?>"><?php echo $categorie; ?></option>
+									<option value="<?php echo $categorie; ?>"><?php echo $categorie; ?></option>
 								<?php endforeach; ?>
 							</select>
 						</div>
 					</div>
 					<div class="row">
 						<div class="form-group col-xs-12">
-						    <label for="hashtag">Hashtag associés</label>
-						   <input class="form-control" type="text" id="hashtag" name="hashtag" placeholder="exemple : #tsunami #Marseille"/>
+						   <label for="hashtag_1">Hashtag associé</label>
+						   <div class="row">
+							   <div class="col-xs-6"><input class="form-control" type="text" id="hashtag_1" name="hashtag_1" value="#crise" disabled/></div>
+							   <div class="col-xs-6"><input class="form-control" type="text" id="hashtag_2" name="hashtag_2" placeholder="example : attentat"></div>  
+						   </div>
 						</div>
 					</div>
 					<div class="form-group row">
