@@ -27,7 +27,7 @@
 					<div class="row">
 						<div class="form-group col-xs-12">
 							<label for="nom_crise">Nom de la crise</label>
-				        	<input class="form-control" type="text" id="nom_crise" value="<?php echo $crisis_name; ?>" name="nom_crise" placeholder="exemple : Tsunami à Marseille"/>
+				        	<input class="form-control" type="text" id="nom_crise" value="<?php echo $crisis_name; ?>" name="nom_crise" placeholder="exemple : Tsunami à Marseille" required/>
 						</div>
 					</div>
 					<div class="row">
@@ -52,14 +52,14 @@
 						   <label for="hashtag_1">Hashtag associé</label>
 						   <div class="row">
 							   <div class="col-xs-6"><input class="form-control" type="text" id="hashtag_1" name="hashtag_1" value="#crise" disabled/></div>
-							   <div class="col-xs-6"><input class="form-control" type="text" id="hashtag_2" name="hashtag_2" value="<?php echo $crisis_hashtag; ?>" placeholder="example : attentat"></div>  
+							   <div class="col-xs-6"><input class="form-control" type="text" id="hashtag_2" name="hashtag_2" value="<?php echo $crisis_hashtag; ?>" placeholder="exemple : attentat" required></div>  
 						   </div>
 						</div>
 					</div>
 					<div class="form-group row">
 						<div class="form-group col-xs-12 col-sm-4">
 						   <label for="email">Email</label>
-						   <input class="form-control" type="email" id="email" name="email" value="<?php echo $crisis_email;?>" placeholder="adresse.email@email.fr"/>
+						   <input class="form-control" type="email" id="email" name="email" value="<?php echo $crisis_email;?>" placeholder="adresse.email@email.fr" required/>
 						</div>
 						<div class="form-group col-xs-12 col-sm-4 col-sm-offset-2">
 						   <label for="twitter">Compte Twitter</label>
