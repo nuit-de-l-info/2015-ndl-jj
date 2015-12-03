@@ -108,6 +108,11 @@ $route['admin/clients/nouveau_client'] = 'manage_users/add';
 $route['admin/clients/modifier_client/(:num)/(:any)'] = 'manage_users/update/$1';
 $route['admin/clients/remove_client/(:num)'] = 'manage_users/remove/$1';
 
+//validation crises
+$route['admin/choisir-crise-a-valider'] = 'manage_crises/index';
+$route['admin/view-crise/(:num)'] = 'manage_crises/view_crise/$1';
+$route['admin/valider-crise/(:num)'] = 'manage_crises/validate/$1';
+
 $route['admin/files/connector'] = 'manage_files/connector';
 $route['admin/files/tinymce'] = 'manage_files/tinymce';
 $route['admin/files(/:any)?'] = 'manage_files';
