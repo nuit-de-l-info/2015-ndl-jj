@@ -1,21 +1,68 @@
+<?php 
+if (!$crise) { 
+?>
+
+<p> Cette page n'existe pas </p>
+<?php 
+} else {
+?>
 <div class="container">
 	<div class="row">
-		<h1>Détail de la crise #id_crise</h1>
-		<div class="row container-fluid">
-			<div class="col-xs-4">Nom</div>
-			<div class="col-xs-4">#</div>
-			<div class="col-xs-4">Catégorie</div>
-			<div class="col-xs-12 form-group">
-				<label for="description">Description</label>
-				<textarea id="description" class="form-control" value="" disabled></textarea>
-			</div>
-		</div>
-		<div class="row container-fluid">	
-		  <!-- récupérer informations facebook, ... -->
-		  <div class="col-xs-6">Commentaires Facebook, Twitter</div>
-		  <!-- api google ? -->
-		  <div class="col-xs-6" id="map">Carte</div>
-		</div>
+		<h1>Détail de la crise <?= $crise->nom ?></h1>
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Nom</th>
+					<th>#</th>
+					<th>Catégorie</th>
+					<th>
+						<label for="description">Description</label>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th scope="row"><?= $crise->nom ?></th>
+				<td><?= $crise->hashtag ?></td>
+				<td><?= $crise->categorie ?></td>
+				<td><textarea id="description" class="form-control" disabled><?= $crise->description?></textarea></td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="row container-fluid">	
+	  	<!-- récupérer informations facebook, ... -->
+	  	<div class="col-xs-6">Commentaires Facebook, Twitter
+		  	<div>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+  						<th>#</th>
+  						<th>Commentaire</th>
+  						<th>+</th>
+  						<th>-</th>
+						</tr>
+				</thead>
+	  			<?php 
+	  			for ($i = 0; $i < count($commentaire); $i ++) {
+  				?>
+	  			<tr>
+  					<th><span><?= $i ?></span></th>
+  					<th><span><?= $commentaire[$i]->commentaire ?></span></th>
+  					<th><span><?= $commentaire[$i]->nb_votes_positifs ?></span></th>
+  					<th><span><?= $commentaire[$i]->nb_votes_negatifs ?></span></th>
+  				</tr>
+  				<?php
+	  			}
+				?>
+				</table>
+		  	</div>
+	  	</div>
+	  	<!-- api google ? -->
+	  	<div class="col-xs-6" id="map">Carte
+				<div id="googlemap"></div>
+	  	</div>
+	</div>
 		<div class="row container-fluid">
 			<div class="col-xs-12">Gallerie
 				<div class='list-group gallery'>
@@ -75,3 +122,23 @@
 </div>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+	var map;
+	var initialize;
+	 
+	initialize = function(){
+	  var latLng = new google.maps.LatLng(<?= $crise->longitude ?>, <?= $crise->latitude ?>); // Correspond au coordonnées de Lille
+	  var myOptions = {
+	    zoom      : 5,
+	    center    : latLng,
+	    mapTypeId : google.maps.MapTypeId.TERRAIN, // Type de carte, différentes valeurs possible HYBRID, ROADMAP, SATELLITE, TERRAIN
+	    maxZoom   : 20
+	  };
+	 
+	  map = new google.maps.Map(document.getElementById('googlemap'), myOptions);
+	};
+	 
+	initialize();
+</script>
+<?php } ?>
