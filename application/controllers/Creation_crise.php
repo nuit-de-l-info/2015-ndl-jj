@@ -58,7 +58,8 @@ class Creation_crise extends MY_Controller {
                     'twitter' => $this->input->post('twitter'),
                 );
             }else{
-                // display alert message error
+                // error fields required
+                alert(validation_errors('- ', '<br />'),'error',true);
             }
         }
         $this->data->categories = array('attentat', 'séisme', 'ouragan', 'thibault');
