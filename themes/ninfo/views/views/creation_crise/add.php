@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<h1>Déclaration d'une nouvelle crise</h1>
-			<?= form_open(current_url(), array('role' => 'form','class' => 'form-horizontal col-xs-12')); ?>
+			<?= form_open("http://ninfo.fr/index.php/crise/nouvelle-crise", array('role' => 'form','class' => 'form-horizontal col-xs-12')); ?>
 				<div class="col-xs-6">
 					<div class="row">
 						<div class="form-group col-xs-12">
