@@ -33,7 +33,7 @@ class Detail_crise extends MY_Controller {
 
     public function moins($crise, $comment) {
         if($comment) {
-            $this->commentaire->plus($comment);
+            $this->commentaire->moins($comment);
         }
         redirect(site_url('detail-crise/' . $crise), 'location');
 
