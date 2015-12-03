@@ -99,6 +99,11 @@ $route['connexion/(:num)/(:any)'] = 'account/login/$1/$2';
 $route['deconnexion'] = 'account/logout';
 $route['mon-compte'] = 'account/update';
 
+
+//CRISE
+$route['crise/nouvelle-crise'] = 'creation_crise/index';
+
+
 /***** ADMIN *****/
 $route['admin'] = 'manage';
 
