@@ -35,7 +35,8 @@ jQuery(document).ready(function($) {
 
 			var content_el =  "<a style='text-decoration: none;' href='"+data.url+"'>";
 			content_el  += "<h2>";
-			content_el += data.name;
+			content_el += data.nom;
+			content_el += " ["+data.hashtag+"]";
 			content_el += "</h2>";
 			content_el += "<p>";
 			content_el += data.description;
@@ -46,7 +47,7 @@ jQuery(document).ready(function($) {
 				content: content_el
 			 });
 			 //création du marker
-			 var position = new google.maps.LatLng( data.lat , data.longitude );
+			 var position = new google.maps.LatLng( data.latitude , data.longitude );
 
 			 var marker = new google.maps.Marker({
 			  'position' : position,

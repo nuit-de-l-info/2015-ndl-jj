@@ -8,4 +8,10 @@
 #map-home{
 	height: 600px;
 	margin: auto;
+	margin-top: 30px;
+}
+
+/*FOOTER*/
+#footer {
+	text-align: center;
 }
