@@ -11,7 +11,7 @@ class Accueil extends MY_Controller {
             'ville' => 'Paris',
             'lat' => '48.863623',
             'longitude' => '2.371341',
-            'url' => 'http://ninfo.fr/crise/0',
+            'url' => 'http://ninfo.fr/detail-crise/0',
             'description' => 'Cras et urna ut mauris sagittis molestie. Cras tempus mattis facilisis.',
         ),
         array(
@@ -19,7 +19,7 @@ class Accueil extends MY_Controller {
             'ville' => 'Paris',
             'lat' => '48.918',
             'longitude' => '2.351',
-            'url' => 'http://ninfo.fr/crise/1',
+            'url' => 'http://ninfo.fr/detail-crise/1',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         )
     );
