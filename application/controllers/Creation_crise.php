@@ -27,6 +27,11 @@ class Creation_crise extends MY_Controller {
                     'label' => '',
                     'rules' => 'required',
                 ),
+                array(
+                    'field' => 'email',
+                    'label' => 'Email',
+                    'rules' => 'required',
+                ),
             );
 
             // valid form
@@ -38,10 +43,20 @@ class Creation_crise extends MY_Controller {
                     'description_crise' => trim(strtolower($this->input->post('description_crise'))),
                     'type_crise' => trim(strtolower($this->input->post('type_crise'))),
                     'hashtag_2' => trim(strtolower($this->input->post('hashtag_2'))),
+                    'email' => trim(strtolower($this->input->post('email'))),
+                    'twitter' => trim(strtolower($this->input->post('twitter'))),
                 );
 
                 // add data in table crise
-
+                // if ajout ok
+                $this->data->values_form = array(
+                    'nom_crise' => $this->input->post('nom_crise'),
+                    'description_crise' => $this->input->post('description_crise'),
+                    'type_crise' => $this->input->post('type_crise'),
+                    'hashtag_2' => $this->input->post('hashtag_2'),
+                    'email' => $this->input->post('email'),
+                    'twitter' => $this->input->post('twitter'),
+                );
             }else{
                 // display alert message error
             }
