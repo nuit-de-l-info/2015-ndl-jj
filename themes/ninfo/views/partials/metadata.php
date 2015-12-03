@@ -5,11 +5,8 @@
 
 <?php
 Asset::css('asset::bootstrap.min.css', false, 'front');
-Asset::css('asset::ihover.min.css', false, 'front');
-Asset::css('asset::animate.css', false, 'front');
-Asset::css('asset::zoombox.css', false, 'front');
-Asset::css('asset::chosen.min.css', false, 'front');
 Asset::css('asset::hoverify-bootnav.css', false, 'front');
+Asset::css('asset::chosen.min.css', false, 'front');
 Asset::css('theme::style.css', false, 'front');
 Asset::css('theme::mobile.css', false, 'front');
 Asset::js('asset::jquery.1.11.1.min.js', false, 'front');
@@ -22,3 +19,5 @@ Asset::js('theme::script.js', false, 'front');
 echo Asset::render_css('front');
 echo Asset::render_js('front');
 ?>
+
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>

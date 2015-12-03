@@ -93,6 +93,7 @@ $route['translate_uri_dashes'] = FALSE;
 
 // Account
 $route['accueil(/:any)?'] = 'accueil/index/$1';
+$route['recuperer_crise_par_id/(:num)'] = 'accueil/get_crise_ajax/$1';
 $route['accueil/page-non-autorise'] = 'accueil/error';
 $route['connexion'] = 'account/login/';
 $route['connexion/(:num)/(:any)'] = 'account/login/$1/$2';
