@@ -24,12 +24,14 @@ jQuery(document).ready(function($) {
 		if(data!=null){
 			//création de la fenêtre
 
-			var content_el = "<h2>";
+			var content_el =  "<a style='text-decoration: none;' href='"+data.url+"'>";
+			content_el  += "<h2>";
 			content_el += data.name;
 			content_el += "</h2>";
 			content_el += "<p>";
 			content_el += data.description;
 			content_el += "</p>";
+			content_el += "</a>";
 
 			 var info_window = new google.maps.InfoWindow({
 				content: content_el
