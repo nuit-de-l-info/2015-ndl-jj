@@ -104,6 +104,10 @@ $route['mon-compte'] = 'account/update';
 //CRISE
 $route['crise/nouvelle-crise'] = 'creation_crise/index';
 
+/*CRISE*/
+$route['detail-crise/(:num)'] = 'detail_crise/index/$1';
+$route['vote-plus/(:num)/(:num)'] = 'detail_crise/plus/$1/$2';
+$route['vote-moins/(:num)/(:num)'] = 'detail_crise/moins/$1/$2';
 
 /***** ADMIN *****/
 $route['admin'] = 'manage';
@@ -112,6 +116,10 @@ $route['admin/clients'] = 'manage_users';
 $route['admin/clients/nouveau_client'] = 'manage_users/add';
 $route['admin/clients/modifier_client/(:num)/(:any)'] = 'manage_users/update/$1';
 $route['admin/clients/remove_client/(:num)'] = 'manage_users/remove/$1';
+
+//validation crises
+$route['admin/choisir-crise-a-valider'] = 'manage_crises/index';
+$route['admin/crise-valider/(:num)'] = 'manage_crises/validate/$1';
 
 $route['admin/files/connector'] = 'manage_files/connector';
 $route['admin/files/tinymce'] = 'manage_files/tinymce';
