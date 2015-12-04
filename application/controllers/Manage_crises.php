@@ -46,7 +46,7 @@ class Manage_crises extends MY_Controller
 		}
 
 		$this->template->set('page_title', 'Gestion des crises à valider');
-		$this->template->set_layout('manage');
+		$this->template->set_layout('default');
 		$this->template->build('views/manage/crises/liste_crises_a_valider', $this->data);
 
 

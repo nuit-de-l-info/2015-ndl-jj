@@ -19,3 +19,20 @@
 #footer {
 	text-align: center;
 }
+
+body {
+	margin-top: 60px;
+}
+
+.nom-crise {
+	font-size: larger;
+}
+
+footer {
+	padding-top: 10px;
+	background-color: #adadad;
+    position: absolute;
+    height: 50px;
+    bottom: 0;
+    width: 100%;
+}
