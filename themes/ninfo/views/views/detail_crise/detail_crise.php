@@ -11,28 +11,7 @@ if (!$crise) {
 		<div id="ee" style="display:none" align="center">
 			<img id = "myImage" src = "<?php echo base_url("assets/files/cantina.gif")?>">
 		</div>
-		<h1>Détail de la crise <?= $crise->nom ?></h1>
-		<table id="table_description" class="table table-bordered">
-			<thead>
-				<tr>
-					<th>Nom</th>
-					<th>#</th>
-					<th>Catégorie</th>
-					<th>
-						<label for="description">Description</label>
-					</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th scope="row"><?= $crise->nom ?></th>
-				<td><?= $crise->hashtag ?></td>
-				<td><?= $crise->categorie ?></td>
-				<td><textarea id="description" class="form-control" disabled><?= $crise->description?></textarea></td>
-			</tr>
-			</tbody>
-		</table>
-
+	</div>
 	<div id="jumbotron" class="jumbotron">
 		<div class="row">
 			<div class="col-xs-12 col-md-10">
