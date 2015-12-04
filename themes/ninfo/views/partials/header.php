@@ -9,7 +9,7 @@
 				<li><a href="<?=base_url('index.php/trombinoscope')?>">Trombinoscope</a></li>
 				<li><a href="<?= site_url('accesskey/about') ?>" accesskey="1" tabindex="1">Accesskey</a></li>
 				<li><a href="<?=site_url('admin/choisir-crise-a-valider')?>">Administration</a></li>
-				<li><a href="<?=site_url('connexion')?>">Connexion</a></li>
+				<li><a href="<?=site_url('account/login')?>">Connexion</a></li>
 			</ul>
 		</div>	
 	</nav>
