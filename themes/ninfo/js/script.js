@@ -1,5 +1,14 @@
 jQuery(document).ready(function($) {
 
+	$(document).ready(function(){
+	    //FANCYBOX
+	    //https://github.com/fancyapps/fancyBox
+	    $(".fancybox").fancybox({
+	        openEffect: "none",
+	        closeEffect: "none"
+	    });
+	});
+
 	var base_url = "http://ninfo.fr/index.php/";
 	var theme_url = "http://ninfo.fr/themes/";
 
