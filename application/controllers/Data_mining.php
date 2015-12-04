@@ -18,6 +18,7 @@ class Data_mining extends MY_Controller {
             $tweets = $this->twitter_model->get_tweets_from_crise($hastag);
             $tweets = json_decode($tweets);
 
+
             $tweets_in_base = $this->twitter_model->get_all_id_tweet_by_hastag($hastag);
 
             $tmp = [];
@@ -28,6 +29,7 @@ class Data_mining extends MY_Controller {
 
                 foreach ($tweets as $key => $tweet) {
                     if(!in_array($tweet->id, $tmp)){
+
                         //on ajoute ce tweet en base
                         $data_to_save = array(
                             'username' => $tweet->username,
