@@ -62,7 +62,19 @@ if (!$crise) {
   				</tr>
   				<?php
 	  			}
-				?>
+	  			?>
+
+	  			<?php foreach($tweets_in_base as $tweet): ?>
+	  				<tr>
+		  				<td>
+		  					<h3><?= str_replace('@@','@',$tweet->username); ?></h3>
+		  					<date><?= date('d/m/Y',$tweet->time); ?></date>
+		  					<p><?= $tweet->content ?></p>
+		  				</td>
+		  				<td></td>
+		  				<td></td>
+	  				</tr>
+	  			<?php endforeach; ?>
 				</table>
 						<button class="btn btn-default">Commenter</button>
 
