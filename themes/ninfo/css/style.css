@@ -38,3 +38,8 @@
 .replace_cursor {
 	cursor: url(../img/sabre.png), auto;
 }
+
+/*FOOTER*/
+#footer {
+	text-align: center;
+}

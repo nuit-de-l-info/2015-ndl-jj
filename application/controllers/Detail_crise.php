@@ -4,22 +4,40 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Detail_crise extends MY_Controller {
 
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->load->model('commentaire_model', 'commentaire');
+        $this->load->model('crise_model', 'crise');
+    }
 
     public function index($index)
     {   
-        $this->load->model('commentaire_model', 'commentaire');
-        $this->load->model('crise_model', 'crise');
-
-        if($this->data->crise = $this->crise->get($index)) {
+        if($index && $this->data->crise = $this->crise->get($index)) {
         
             $this->data->commentaire = $this->commentaire->get_commentaires_avec_crise($index);
-            
         }
 
         $this->template->set_layout('default')
             ->build('views/detail_crise/detail_crise', $this->data);
     }
 
+    public function plus($crise, $comment) {
+        if($comment) {
+            $this->commentaire->plus($comment);
+        }
+        redirect(site_url('detail-crise/' . $crise), 'location');
+
+    }
+
+    public function moins($crise, $comment) {
+        if($comment) {
+            $this->commentaire->moins($comment);
+        }
+        redirect(site_url('detail-crise/' . $crise), 'location');
+
+    }
 
 
     public function error(){
