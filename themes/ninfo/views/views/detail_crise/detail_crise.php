@@ -63,7 +63,9 @@ if (!$crise) {
   				<?php
 	  			}
 	  			?>
-
+	  			<?php if(!$tweets_in_base) {
+	  				$tweets_in_base = [];
+	  			} ?>
 	  			<?php foreach($tweets_in_base as $tweet): ?>
 	  				<tr>
 		  				<td>
@@ -71,7 +73,8 @@ if (!$crise) {
 		  					<date><?= date('d/m/Y',$tweet->time); ?></date>
 		  					<p><?= $tweet->content ?></p>
 		  				</td>
-		  				<td></td>
+		  				<td><div class="row"><div class="col-xs-3"><span><?= $tweet->nb_votes_positifs ?></span></div><div class="col-xs-9"><a href="<?= site_url('vote-plus/' . $crise->id . '/' . $tweet->id) ?>"><span class="glyphicon glyphicon-thumbs-up"></span></a></div></div>
+		  				<div class="row"><div class="col-xs-3"><span><?= $tweet->nb_votes_negatifs ?></span></div><div class="col-xs-9"><a href="<?= site_url('vote-moins/' . $crise->id . '/' . $tweet->id)  ?>"><span class="glyphicon glyphicon-thumbs-down"></span></a></div></div></td>
 		  				<td></td>
 	  				</tr>
 	  			<?php endforeach; ?>

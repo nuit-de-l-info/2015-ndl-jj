@@ -91,6 +91,29 @@ class Twitter_model extends MY_Model
 		return $tweets;
 	}
 
+	public function plus($com)
+	{
+		$this->db->where('id', $com)
+				 ->limit(1)
+				 ->set('nb_votes_positifs', 'nb_votes_positifs+1', FALSE);
+
+		$this->db->update($this->table);
+
+		return $this->db->affected_rows() > 0;
+	}
+
+	public function moins($com)
+	{
+		$this->db->where('id', $com)
+				 ->limit(1)
+				 ->set('nb_votes_negatifs', 'nb_votes_negatifs+1', FALSE);
+
+		$this->db->update($this->table);
+
+		return $this->db->affected_rows() > 0;
+	}
+	
+
 	/**
 	 * Présente un tweet
 	 *

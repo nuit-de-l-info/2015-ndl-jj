@@ -29,7 +29,7 @@ class Detail_crise extends MY_Controller {
 
     public function plus($crise, $comment) {
         if($comment) {
-            $this->commentaire->plus($comment);
+            $this->twitter_model->plus($comment);
         }
         redirect(site_url('detail-crise/' . $crise), 'location');
 
@@ -37,7 +37,7 @@ class Detail_crise extends MY_Controller {
 
     public function moins($crise, $comment) {
         if($comment) {
-            $this->commentaire->moins($comment);
+            $this->twitter_model->moins($comment);
         }
         redirect(site_url('detail-crise/' . $crise), 'location');
 
