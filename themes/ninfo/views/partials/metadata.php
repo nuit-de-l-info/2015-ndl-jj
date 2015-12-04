@@ -23,4 +23,9 @@ echo Asset::render_css('front');
 echo Asset::render_js('front');
 ?>
 
+     <script type="text/javascript">
+        	var base_url = "<?= site_url(''); ?>/";
+			var theme_url = "<?= base_url('themes') ?>/";
+        </script>
+
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>

@@ -7,8 +7,7 @@ class Manage extends MY_Controller {
 
     public function index()
     {
-        //$this->load->view('home');
-        $this->template->set_layout('manage')
+        $this->template->set_layout('default')
             ->build('views/manage/home', $this->data);
     }
 }

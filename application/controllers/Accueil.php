@@ -7,6 +7,7 @@ class Accueil extends MY_Controller {
     public function index()
     {   
         $this->load->model('crise_model');
+
         $this->data->crises = $this->crise_model->get_all();
 
         $this->template->set_layout('default')
@@ -26,6 +27,12 @@ class Accueil extends MY_Controller {
         echo json_encode(false);
     
     }
+
+    public function trombi(){
+        $this->template->set_layout('default')
+            ->build('views/home/trombi',$this->data);
+    }
+
 
     public function error(){
     	alert('Vous n\'avez pas accès à cette page, il faut être connecté','error',true);
