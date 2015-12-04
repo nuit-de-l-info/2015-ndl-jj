@@ -16,7 +16,7 @@
 }
 
 /*FOOTER*/
-#footer {
+footer {
 	text-align: center;
 }
 
@@ -29,10 +29,6 @@ body {
 }
 
 footer {
-	padding-top: 10px;
+	margin-top: 10px;
 	background-color: #adadad;
-    position: absolute;
-    height: 50px;
-    bottom: 0;
-    width: 100%;
 }
