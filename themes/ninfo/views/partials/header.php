@@ -5,8 +5,11 @@
 			<div class="navbar-header"><a class="navbar-brand" href="<?=site_url('')?>" accesskey="3">InfoCrises</a></div>
 
 			<ul class="nav navbar-nav navbar-right">
+				<li><a href="<?=base_url('ninfo-game')?>">The impossible game</a></li>
+				<li><a href="<?=base_url('index.php/trombinoscope')?>">Trombinoscope</a></li>
+				<li><a href="<?= site_url('accesskey/about') ?>" accesskey="1" tabindex="1">Accesskey</a></li>
 				<li><a href="<?=site_url('admin/choisir-crise-a-valider')?>">Administration</a></li>
-				<li><a href="<?=site_url('connexion')?>">Connexion</a></li>
+				<li><a href="<?=site_url('account/login')?>">Connexion</a></li>
 			</ul>
 		</div>	
 	</nav>

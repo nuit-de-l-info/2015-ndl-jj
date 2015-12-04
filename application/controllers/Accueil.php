@@ -28,6 +28,11 @@ class Accueil extends MY_Controller {
     
     }
 
+    public function trombi(){
+        $this->template->set_layout('default')
+            ->build('views/home/trombi',$this->data);
+    }
+
 
     public function error(){
     	alert('Vous n\'avez pas accès à cette page, il faut être connecté','error',true);
