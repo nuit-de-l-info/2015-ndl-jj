@@ -90,8 +90,6 @@ if (!$crise) {
 	  			}
 				?>
 				</table>
-						<button class="btn btn-default">Commenter</button>
-
 				</div>
 			</div>
 		</div>		
