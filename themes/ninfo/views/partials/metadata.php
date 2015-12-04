@@ -15,7 +15,10 @@ Asset::js('asset::bootstrap.min.js', false, 'front');
 Asset::js('asset::zoombox.js', false, 'front');
 Asset::js('asset::chosen.jquery.min.js', false, 'front');
 Asset::js('asset::hoverify-bootnav.js', false, 'front');
+Asset::js('asset::jquery.konami.min.js', false, 'front');
+Asset::js('asset::vanilla.konami.min.js', false, 'front');
 Asset::js('theme::script.js', false, 'front');
+Asset::js('theme::howler.min.js', false, 'front');
 echo Asset::render_css('front');
 echo Asset::render_js('front');
 ?>
