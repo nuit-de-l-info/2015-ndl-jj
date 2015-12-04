@@ -2,7 +2,7 @@
 
 class User_model extends MY_Model
 {
-	public $table = 'users';
+	public $table = 'utilisateur';
 	public $pk    = 'id';
 
 	public $levels = array(
@@ -234,33 +234,7 @@ class User_model extends MY_Model
 			$user = false;
 		}
 		else
-		{
-			//On va recuperer les entreprises associés:
-
-			$id_entreprises = $this->db->select('id_entreprise')
-									->where('id_user',$user->id)
-									->get('user_entreprise')
-									->result();
-
-			
-
-			$user->entreprises = array();
-			$user->id_entreprises = array();
-
-
-			if( !empty($id_entreprises) ) {
-				foreach ($id_entreprises as  $id_entreprise) {
-					$user->entreprises[] = $this->entreprise_model->get_once_by_id($id_entreprise->id_entreprise);
-					$user->id_entreprises[] = $id_entreprise->id_entreprise;
-				}
-			}else{
-				$user->entreprises = false;
-			}
-
-
-			$user->fullname = $user->firstname.' '.$user->lastname;
-			$user->libelle_level = array_key_exists($user->level, $this->levels) ? $this->levels[$user->level] : 'Inconnu';
-		}
+		{}
 
 		return;
 	}

@@ -21,7 +21,7 @@
 
 <div class="container">
 	<div class="row">
-		<h1>Déclaration d'une nouvelle crise</h1>
+		<h3>Déclaration d'une nouvelle crise</h3>
 			<?= form_open("http://ninfo.fr/index.php/crise/nouvelle-crise", array('role' => 'form','class' => 'form-horizontal col-xs-12')); ?>
 				<div class="col-xs-12 col-sm-6">
 					<div class="row">
@@ -69,9 +69,9 @@
 					<input type="hidden" id="latitude" name="latitude"/>
 					<input type="hidden" id="longitude" name="longitude"/>
 					<div class="row">
-						<div class="form-group col-xs-4 col-sm-4">
-							<button type="submit" class="btn btn-default btn-success" name="ajouter_crise" value="sent">
-		                    	Ajouter crise
+						<div class="form-group col-xs-4">
+							<button type="submit" class="btn btn-block btn-success" name="ajouter_crise" value="sent">
+		                    Ajouter crise
 		                	</button>
 	                	</div>
                 	</div>

@@ -8,6 +8,9 @@ class Creation_crise extends MY_Controller {
     {
         parent::__construct();
         $this->load->library('form_validation');
+        $this->load->model('crise_model', 'crise');
+        $this->load->model('user_model', 'user');
+        $this->load->model('categorie_model', 'categorie');
     }
 
     public function index()
@@ -37,18 +40,42 @@ class Creation_crise extends MY_Controller {
             // valid form
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() === true) {
+                $id_user = '';
+                $hastag = '#crise_' . $this->input->post('hashtag_2');
+                if($this->user->get_once_by_email($this->input->post('email'))){
+                    $id_user = $this->user->get_once_by('email',$this->input->post('email'))->id;
+                }else{
+                    // add user in table
+                    $data_user = array(
+                        'email' => $this->input->post('email'),
+                        'est_admin' => false,
+                        'pseudo_twitter' => $this->input->post('twitter') !== '' ? $this->input->post('twitter') : '',
+                        'mdp' => 'test',
+                    );
+                    $this->user->add($data_user);
+                    $id_user = $this->user->get_once_by('email',$this->input->post('email'))->id;
+
+                }
                 // get data from form
                 $data = array(
-                    'nom_crise' => trim(strtolower($this->input->post('nom_crise'))),
-                    'description_crise' => trim(strtolower($this->input->post('description_crise'))),
-                    'type_crise' => trim(strtolower($this->input->post('type_crise'))),
-                    'hashtag_2' => trim(strtolower($this->input->post('hashtag_2'))),
-                    'email' => trim(strtolower($this->input->post('email'))),
-                    'twitter' => trim(strtolower($this->input->post('twitter'))),
+                    'nom' => $this->input->post('nom_crise'),
+                    'description' =>$this->input->post('description_crise'),
+                    'categorie' => $this->input->post('type_crise'),
+                    'hashtag' => $hastag,
+                    'auteur' => $id_user,
+                    'latitude' => $this->input->post('latitude'),
+                    'longitude' => $this->input->post('longitude'),
                 );
+                $result = $this->crise->add($data);
+                if($result !== false){
+                    alert("Déclaration de crise ajoutée avec succès",'success',true);
+                    redirect('index.php/detail-crise/'.$result);
+                }else{
+                    alert("Erreur ajout",'error',true);
+                }
+                
 
-                // add data in table crise
-                // if ajout ok
+
                 $this->data->values_form = array(
                     'nom_crise' => $this->input->post('nom_crise'),
                     'description_crise' => $this->input->post('description_crise'),
@@ -62,7 +89,10 @@ class Creation_crise extends MY_Controller {
                 alert(validation_errors('- ', '<br />'),'error',true);
             }
         }
-        $this->data->categories = array('attentat', 'séisme', 'ouragan', 'thibault');
+        $this->data->categories = array();
+        foreach ($this->categorie->get_all() as $categorie) {
+            $this->data->categories[$categorie->id] = $categorie->libelle;
+        }
     	$this->template->set_layout('default')
             ->build('views/creation_crise/add', $this->data);
     }
