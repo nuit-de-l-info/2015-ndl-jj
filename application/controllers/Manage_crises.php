@@ -221,7 +221,7 @@ class Manage_crises extends MY_Controller
 		}else{
 			alert("Une erreur s'est produite lors de la validation de la crise.", 'error', true);
 		}
-		redirect('/index.php/admin/choisir-crise-a-valider');
+		redirect(site_url('admin/choisir-crise-a-valider'));
 	}
 
 /*
