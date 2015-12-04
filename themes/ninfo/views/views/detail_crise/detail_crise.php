@@ -191,25 +191,25 @@ if (!$crise) {
 	});
 
 	var sound1 = new Howl({
-		urls: ['<?php echo base_url("assets/files/c1.mp3")?>'],
+		urls: ['<?php echo base_url("assets/files/c1.wav")?>'],
 		autoplay: false,
 		loop: false
 	});
 
 	var sound2 = new Howl({
-		urls: ['<?php echo base_url("assets/files/C2.mp3")?>'],
+		urls: ['<?php echo base_url("assets/files/C2.wav")?>'],
 		autoplay: false,
 		loop: false
 	});
 
 	var sound3 = new Howl({
-		urls: ['<?php echo base_url("assets/files/DV1.mp3")?>'],
+		urls: ['<?php echo base_url("assets/files/DV1.wav")?>'],
 		autoplay: false,
 		loop: false
 	});
 
 	var sound4 = new Howl({
-		urls: ['<?php echo base_url("assets/files/DV2.mp3")?>'],
+		urls: ['<?php echo base_url("assets/files/DV2.wav")?>'],
 		autoplay: false,
 		loop: false
 	});
