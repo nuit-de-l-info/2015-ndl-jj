@@ -1,7 +1,7 @@
 <div class="jumbotron">
       <div class="container">
         <h1>Bienvenue sur InfoCrises</h1>
-        <p>Site d'information pour les cas d'urgences. Ce site vise à recenser en temps réel les états de crises actuels et les informations associées. Avant de signaler une situation d'urgence merci de vérifier si celui-ci n'est pas déjà référencé dans la liste ci-dessous.</p>
+        <p>Site d'information pour les cas d'urgences. Ce site vise à recenser en temps réel les états de crises actuels et les informations associées. Avant de signaler une situation d'urgence merci de vérifier que celle-ci n'est pas déjà référencée dans la liste ci-dessous.</p>
       </div>
 </div>
 	<div class="row" id="homepage">
