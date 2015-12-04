@@ -13,7 +13,7 @@
 					<?php endforeach ?>
  			</select>
 		</div>
-		<div class="col-xs-12 col-md-6 ">
+		<div class="col-xs-12 col-md-4 col-md-offset-2">
 			<a href="<?= site_url('crise/nouvelle-crise') ?>" class="btn btn-info" accesskey="2" tabindex="2">
 				Signaler une situation d'urgence
  			</a>
