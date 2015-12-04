@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 04 Décembre 2015 à 05:06
+-- Généré le :  Ven 04 Décembre 2015 à 06:28
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -102,9 +102,26 @@ CREATE TABLE IF NOT EXISTS `crise` (
 --
 
 INSERT INTO `crise` (`id`, `nom`, `description`, `hashtag`, `longitude`, `latitude`, `auteur`, `categorie`, `rayon_en_metres`, `est_termine`, `est_validee`) VALUES
-(6, 'Tsunami à Paris', 'Une vague de 100m', '#crise_#kamikaze', 2.290255, 48.860799, 1, 1, 5, 0, 0),
-(7, 'Attentat à Paris', 'Prise d''otages...', '#crise_#prayforparis', 2.304760, 48.851877, 1, 1, 30, 0, 0),
-(8, 'Nuit de l''info', 'Trop d''étudiants qui tentent de s''échapper', '#crise_#nuitinfo', 1.400828, 43.578220, 1, 1, 3, 0, 0);
+(6, 'Tsunami à Paris', 'Une vague de 100m', 'crise_kamikaze', 2.290255, 48.860799, 1, 1, 5, 0, 0),
+(7, 'Attentat à Paris', 'Prise d''otages...', 'crise_prayforparis', 2.304760, 48.851877, 1, 1, 30, 0, 0),
+(8, 'Nuit de l''info', 'Trop d''étudiants qui tentent de s''échapper', 'crise_nuitinfo', 1.400828, 43.578220, 1, 1, 3, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `tweet`
+--
+
+CREATE TABLE IF NOT EXISTS `tweet` (
+  `id` int(11) NOT NULL,
+  `id_tweet` varchar(20) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `hashtag` varchar(50) NOT NULL,
+  `content` text NOT NULL,
+  `time` varchar(50) NOT NULL,
+  `nb_votes_negatifs` int(11) NOT NULL,
+  `nb_votes_positifs` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
