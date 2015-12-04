@@ -40,6 +40,21 @@ class Twitter_model extends MY_Model
 		}
 	}
 
+	public function get_all_by_hastag($hashtag){
+		$query = $this->db->get_where($this->table, array('hashtag' => $hashtag));
+
+		if ($query->num_rows() > 0)
+		{
+			$tweet = $query->result();
+			$this->_presenter($tweet);
+			return $tweet;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
 	/**
 	 * Retourne tous les tweets du club dans un tableau classé par timestamp
 	 *
