@@ -197,7 +197,7 @@ if (!$crise) {
 	});
 
 	var sound2 = new Howl({
-		urls: ['<?php echo base_url("assets/files/C2.wav")?>'],
+		urls: ['<?php echo base_url("assets/files/c2.wav")?>'],
 		autoplay: false,
 		loop: false
 	});
