@@ -47,51 +47,6 @@ class Manage_users extends MY_Controller
 		$this->user_model->update($id_user , $data_to_update);
 	}	
 
-	public function send_mail($id_client){
-		if($this->user_model->get_once_by_id($id_client)){
-
-			$user = $this->user_model->get_once_by_id($id_client);
-
-			$temp_password = substr(md5(time()), 0, 10);
-			$data = array(
-				'password' => $this->user_lib->hash($temp_password)
-			);
-
-			if ($this->user_model->update($id_client,$data) === true) {
-				$this->user_model->update($id_client,$data);
-
-				$data['firstname'] = $user->firstname;
-				$data['lastname'] = $user->lastname;
-				$data['email'] =  $user->email;
-				$data['temp_password'] = $temp_password;
-				$data['id'] = $id_client;
-				$message_mail = $this->template->set_layout('mail')->build('views/manage/mail/registrer', $data, TRUE);
-
-				$config_email = array(
-					'protocol' => 'mail',
-					'charset' => 'utf-8',
-					'mailtype' => 'html'
-				);
-				$this->email->initialize($config_email);
-
-				//On envoi le mail:
-
-				$this->email->from('internet@gmail.com');
-				$this->email->to($user->email);
-				$this->email->subject('Vous êtes invités sur le site Agencora');
-				$this->email->message($message_mail);
-
-				$this->email->send();
-
-				alert("Un mail a été envoyé; Regardez votre boite mail", 'success', true);
-			} else {
-				alert("Impossible de valider l'inscription pour le moment. Veuillez réessayer ultérieurement.", 'error', true);
-			}
-		}else{
-			alert("Impossible de valider l'inscription pour le moment. Veuillez réessayer ultérieurement.", 'error', true);
-		}
-		redirect('admin/clients');
-	}
 
 	public function add()
 	{
