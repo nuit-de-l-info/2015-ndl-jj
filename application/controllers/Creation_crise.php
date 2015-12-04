@@ -69,7 +69,7 @@ class Creation_crise extends MY_Controller {
                 $result = $this->crise->add($data);
                 if($result !== false){
                     alert("Déclaration de crise ajoutée avec succès",'success',true);
-                    redirect('index.php/detail-crise/'.$result);
+                    redirect('detail-crise/'.$result);
                 }else{
                     alert("Erreur ajout",'error',true);
                 }
