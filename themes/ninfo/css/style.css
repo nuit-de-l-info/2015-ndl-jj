@@ -15,3 +15,15 @@
 #footer {
 	text-align: center;
 }
+
+body {
+	margin-top: 60px;
+}
+
+.nom-crise {
+	font-size: larger;
+}
+
+#footer {
+	background-color: #000000;
+}

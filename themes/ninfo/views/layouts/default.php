@@ -3,7 +3,7 @@
     <?= $template['partials']['metadata']; ?>
     <body>
      <?= $template['partials']['header']; ?>
-        <div id="content">
+        <div id="content" class="container">
             <?= $this->template->load_view('partials/alert'); ?>
             <?= $template['body']; ?>
         </div>

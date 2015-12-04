@@ -10,13 +10,14 @@ class Detail_crise extends MY_Controller {
 
         $this->load->model('commentaire_model', 'commentaire');
         $this->load->model('crise_model', 'crise');
+        $this->load->model('categorie_model', 'categorie');
     }
 
     public function index($index)
     {   
         if($index && $this->data->crise = $this->crise->get($index)) {
-        
-            $this->data->commentaire = $this->commentaire->get_commentaires_avec_crise($index);
+        	$this->data->commentaire = $this->commentaire->get_commentaires_avec_crise($index);
+            $this->data->categorie = $this->categorie->get($this->data->crise->categorie);
         }
 
         $this->template->set_layout('default')

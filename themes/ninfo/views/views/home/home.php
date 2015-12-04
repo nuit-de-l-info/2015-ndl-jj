@@ -1,5 +1,4 @@
-<div id="homepage" class="container">
-    <div class="row">
+    <div class="row" id="homepage">
         <div class="col-xs-12 col-sm-6">
          	<select id="crises" name="crises" class="js-chosen">
          		<option value="-1" selected>--Choisir une crise</option>
@@ -19,6 +18,5 @@
     		<div id="map-home">
 
     		</div>
-    	</div>
-    </div>
-</div>
+ </div>
+ </div>
