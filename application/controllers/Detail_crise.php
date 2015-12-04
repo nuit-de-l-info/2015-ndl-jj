@@ -11,6 +11,7 @@ class Detail_crise extends MY_Controller {
         $this->load->model('commentaire_model', 'commentaire');
         $this->load->model('crise_model', 'crise');
         $this->load->model('categorie_model', 'categorie');
+        $this->load->model('twitter_model');
     }
 
     public function index($index)
@@ -18,7 +19,9 @@ class Detail_crise extends MY_Controller {
         if($index && $this->data->crise = $this->crise->get($index)) {
         	$this->data->commentaire = $this->commentaire->get_commentaires_avec_crise($index);
             $this->data->categorie = $this->categorie->get($this->data->crise->categorie);
+            $this->data->tweets_in_base = $this->twitter_model->get_all_by_hastag($this->data->crise->hashtag);
         }
+
 
         $this->template->set_layout('default')
             ->build('views/detail_crise/detail_crise', $this->data);
