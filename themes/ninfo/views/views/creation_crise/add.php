@@ -37,7 +37,7 @@
 						<div class="form-group col-xs-12">
 						    <label for="rayon">Rayon d'action</label>
 						    <div class="row">
-						   		<div class="col-xs-4"><input type="text" class="form-control" id="rayon" name="rayon"/></div>
+						   		<div class="col-xs-4"><input type="number" value="1" min="1" step="1" max="10" class="form-control" id="rayon" name="rayon"/></div>
 							</div>
 						</div>
 					</div>

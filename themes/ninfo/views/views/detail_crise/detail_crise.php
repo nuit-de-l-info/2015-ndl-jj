@@ -76,8 +76,6 @@ if (!$crise) {
 	  				</tr>
 	  			<?php endforeach; ?>
 				</table>
-						<button class="btn btn-default">Commenter</button>
-
 				</div>
 			</div>
 		</div>		
