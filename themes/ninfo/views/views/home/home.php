@@ -9,7 +9,7 @@
          		<?php endforeach ?>
          	</select>
         </div>
-     	<a href="<?= site_url('crise/nouvelle-crise') ?>" class="col-xs-12 col-sm-6 btn btn-info" accesskey="1" tabindex="1">
+     	<a href="<?= site_url('crise/nouvelle-crise') ?>" class="col-xs-12 col-sm-6 btn btn-info" accesskey="2" tabindex="2">
      		Déclarer une crise
      	</a>
     </div>

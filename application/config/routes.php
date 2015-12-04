@@ -109,6 +109,9 @@ $route['detail-crise/(:num)'] = 'detail_crise/index/$1';
 $route['vote-plus/(:num)/(:num)'] = 'detail_crise/plus/$1/$2';
 $route['vote-moins/(:num)/(:num)'] = 'detail_crise/moins/$1/$2';
 
+// DEF ACCESSKEY
+$route['accesskey/about'] = 'accesskey/index';
+
 /***** ADMIN *****/
 $route['admin'] = 'manage';
 
