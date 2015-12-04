@@ -41,7 +41,7 @@ class Creation_crise extends MY_Controller {
             $this->form_validation->set_rules($rules);
             if ($this->form_validation->run() === true) {
                 $id_user = '';
-                $hastag = '#crise_' . $this->input->post('hashtag_2');
+                $hastag = 'crise_' . str_replace(array('#',' '),"",$this->input->post('hashtag_2'));
                 if($this->user->get_once_by_email($this->input->post('email'))){
                     $id_user = $this->user->get_once_by('email',$this->input->post('email'))->id;
                 }else{
