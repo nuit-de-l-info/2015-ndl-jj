@@ -7,7 +7,12 @@ if (!$crise) {
 } else {
 ?>
 <div class="container">
-	<div class="jumbotron">
+	<div class="row">
+		<div id="ee" style="display:none" align="center">
+			<img id = "myImage" src = "<?php echo base_url("assets/files/cantina.gif")?>">
+		</div>
+	</div>
+	<div id="jumbotron" class="jumbotron">
 		<div class="row">
 			<div class="col-xs-12 col-md-10">
 				<h1><?= $crise->nom ?></h1>
@@ -38,7 +43,7 @@ if (!$crise) {
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12 col-md-6">
-			<div class="panel panel-default">
+			<div id="panel_commentaire" class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">Commentaires Facebook, Twitter</h3>
 				</div>
@@ -158,9 +163,135 @@ if (!$crise) {
 	</div>
 </div>
 
+<button id="buttonPopup" type="button" class="btn btn-primary btn-lg hidden" data-toggle="modal" data-target="#popupEasterEgg"> Launch demo modal </button>
+
+<div id="popupEasterEgg" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body text-center">
+        <img id = "myImage" src = "<?php echo base_url("assets/files/cantina.gif")?>"/>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script src="//cdn.rawgit.com/namuol/cheet.js/master/cheet.min.js" type="text/javascript"></script>
+<script src="" type="text/javascript"></script>
+<script src="" type="text/javascript"></script>
 <script type="text/javascript">
+	// EASTER EGG
+	var sound = new Howl({
+		urls: ['<?php echo base_url("assets/files/cantina_loop.wav")?>'],
+		autoplay: false,
+		loop: true
+	});
+
+	var sound1 = new Howl({
+		urls: ['<?php echo base_url("assets/files/c1.wav")?>'],
+		autoplay: false,
+		loop: false
+	});
+
+	var sound2 = new Howl({
+		urls: ['<?php echo base_url("assets/files/C2.wav")?>'],
+		autoplay: false,
+		loop: false
+	});
+
+	var sound3 = new Howl({
+		urls: ['<?php echo base_url("assets/files/DV1.wav")?>'],
+		autoplay: false,
+		loop: false
+	});
+
+	var sound4 = new Howl({
+		urls: ['<?php echo base_url("assets/files/DV2.wav")?>'],
+		autoplay: false,
+		loop: false
+	});
+
+	cheet('c a n t i n a', function () {
+		sound.play();
+	   $('#buttonPopup').click();
+
+	});
+
+	cheet('g o d m o d', function () {
+		$("#table_description").mouseenter(
+			function() {
+				sound4.stop();
+				sound2.stop();
+				sound3.stop();
+				sound.stop();
+				sound1.play();
+			}
+		);
+
+		$("#googlemap").mouseenter(
+			function() {
+				sound4.stop();
+				sound1.stop();
+				sound3.stop();
+				sound.stop();
+				sound2.play();
+			}
+		);
+
+		$("#jumbotron").mouseenter(
+			function() {
+				sound2.stop();
+				sound1.stop();
+				sound4.stop();
+				sound.stop();
+				sound3.play();
+			}
+		);
+
+		$("#panel_commentaire").mouseenter(
+			function() {
+				sound2.stop();
+				sound1.stop();
+				sound3.stop();
+				sound.stop();
+				sound4.play();
+			}
+		);
+
+	});
+
+	cheet('s t o p', function () {
+		sound.stop();
+		sound2.stop();
+		sound1.stop();
+		sound3.stop();
+		sound4.stop();
+	});
+
+	$('#popupEasterEgg').on('hidden.bs.modal', function () {
+	    sound.stop();
+	})
+	// END EASTER EGG
+
+ 	$( window ).konami({
+        code : [38,38,40,40,37,39,37,39], // up up down down left right left right
+        cheat: function() {
+		    $('body').toggleClass('replace_cursor');   
+        }
+    });
+
+    
+    cheet('y o d a', function () {
+	    $('body').toggleClass('replace_cursor');
+	});
+   
+
 	var map;
 	var initialize;
 	 

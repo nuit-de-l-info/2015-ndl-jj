@@ -10,7 +10,35 @@
 #map-home{
 	height: 600px;
 	margin: auto;
-	margin-top: 30px;
+}
+
+#clicker { 
+    width: 100px; 
+    height: 100px; 
+    background-color: Green; 
+}
+
+#rotating { 
+    width: 100px; 
+    height: 100px; 
+    background-color: Red; 
+    margin-top: 50px; 
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.rotated { 
+    transform:rotate(90deg); 
+    -webkit-transform:rotate(90deg); 
+    -moz-transform:rotate(90deg); 
+    -o-transform:rotate(90deg); 
+}
+
+
+.replace_cursor {
+	cursor: url(../img/sabre.png), auto;
 }
 
 #trombi .el-trombi img{
@@ -49,11 +77,6 @@
 	transform: translateX(360px);
 }
 
-/*FOOTER*/
-footer {
-	text-align: center;
-}
-
 body {
 	margin-top: 60px;
 }
@@ -62,7 +85,3 @@ body {
 	font-size: larger;
 }
 
-footer {
-	margin-top: 10px;
-	background-color: #adadad;
-}
