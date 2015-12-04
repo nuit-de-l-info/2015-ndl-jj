@@ -60,6 +60,8 @@ class MY_Controller extends CI_Controller
 		 * controllers sont tous préfixés par "Manage_".
 		 *
 		 */
+/*
+	//TODO remettre
 			if (stripos($this->router->fetch_class(), 'manage') !== false)
 			{
 				// L'utilisateur doit être connecté et avoir un "user_level" de "9"
@@ -74,6 +76,7 @@ class MY_Controller extends CI_Controller
 					exit;
 				}
 			}
+*/
 
 
 			/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
