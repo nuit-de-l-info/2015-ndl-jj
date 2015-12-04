@@ -7,7 +7,7 @@
             <?= $this->template->load_view('partials/alert'); ?>
             <?= $template['body']; ?>
         </div>
-        <?= $template['partials']['footer']; ?>
+        <!--<?= $template['partials']['footer']; ?>-->
 
    
     </body>
