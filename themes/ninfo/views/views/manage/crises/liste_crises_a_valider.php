@@ -18,7 +18,7 @@
                 <tbody>
                     <?php foreach($crises as $crise) : ?>
                     <?php if($crise->est_validee == 0) : ?>
-                        <tr class="<?php if( !$crise->est_validee){  echo 'warning'; }?>" >
+                        <tr>
                             <td><?= $crise->nom; ?></td>
                             <td><?= $crise->hashtag; ?></td>
                             <td><?= $crise->libelle_categorie; ?></td>

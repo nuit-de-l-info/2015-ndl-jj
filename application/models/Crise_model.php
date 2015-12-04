@@ -30,7 +30,7 @@ class Crise_model extends MY_Model
 		}
 		else
 		{
-			$crise->url = site_url('index.php/detail-crise/'.$crise->id);
+			$crise->url = site_url('detail-crise/'.$crise->id);
 		}
 
 		return;
