@@ -6,7 +6,8 @@
 
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="<?=base_url('ninfo-game')?>">The impossible game</a></li>
-				<li><a href="<?= site_url('accesskey/about') ?>" accesskey="1" tabindex="1">accesskey</a></li>
+				<li><a href="<?=base_url('index.php/trombinoscope')?>">Trombinoscope</a></li>
+				<li><a href="<?= site_url('accesskey/about') ?>" accesskey="1" tabindex="1">Accesskey</a></li>
 				<li><a href="<?=site_url('admin/choisir-crise-a-valider')?>">Administration</a></li>
 				<li><a href="<?=site_url('connexion')?>">Connexion</a></li>
 			</ul>

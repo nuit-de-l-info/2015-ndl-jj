@@ -95,10 +95,11 @@ $route['translate_uri_dashes'] = FALSE;
 $route['accueil(/:any)?'] = 'accueil/index/$1';
 $route['recuperer_crise_par_id/(:num)'] = 'accueil/get_crise_ajax/$1';
 $route['accueil/page-non-autorise'] = 'accueil/error';
-$route['connexion'] = 'account/login/';
+/*$route['connexion'] = 'account/login/';
 $route['connexion/(:num)/(:any)'] = 'account/login/$1/$2';
 $route['deconnexion'] = 'account/logout';
-$route['mon-compte'] = 'account/update';
+$route['mon-compte'] = 'account/update';*/
+$route['trombinoscope'] = 'accueil/trombi';
 
 
 //CRISE
