@@ -65,6 +65,7 @@ class Creation_crise extends MY_Controller {
                     'auteur' => $id_user,
                     'latitude' => $this->input->post('latitude'),
                     'longitude' => $this->input->post('longitude'),
+                    'rayon_en_metres' => $this->input->post('rayon')
                 );
                 $result = $this->crise->add($data);
                 if($result !== false){

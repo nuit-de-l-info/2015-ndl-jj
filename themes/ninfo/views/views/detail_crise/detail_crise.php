@@ -169,7 +169,7 @@ if (!$crise) {
 		fillOpacity: 0.35,
 		map: map,
 		center: latLng,
-		radius: 1000
+		radius: 1000 * <?= $crise->rayon_en_metres ?>
 	});
 	 
 	};
