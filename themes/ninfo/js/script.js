@@ -52,9 +52,18 @@ jQuery(document).ready(function($) {
 			  'icon' : theme_url+'ninfo/img/marker.png',
 			  animation: google.maps.Animation.DROP
 			  });
-			 console.debug(marker);
 			  addMarker(marker,info_window);
-			  console.log('ttt');
+
+			  	var cityCircle = new google.maps.Circle({
+					strokeColor: '#FF0000',
+					strokeOpacity: 0.8,
+					strokeWeight: 2,
+					fillColor: '#FF0000',
+					fillOpacity: 0.35,
+					map: carte,
+					center: position,
+					radius: 1000
+				});
 
 			 carte.setCenter(new google.maps.LatLng(data.latitude, data.longitude));		   
 		}
@@ -65,11 +74,20 @@ jQuery(document).ready(function($) {
 		//Initilisation de la carte
 		var position = new google.maps.LatLng(48.858093 , 2.294694 ); //tour effeil
 		var optionsCarte = {
-			zoom: 7,
+			zoom: 10,
 			center: position
 		}
 		carte = new google.maps.Map(document.getElementById("map-home"), optionsCarte);
 
+
+		function getPosition(position) {
+			carte.setCenter(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
+		}
+
+		//Initilisation de la carte
+		if(navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(getPosition);
+		}
 	
 		$('#crises').change(function(){
 
