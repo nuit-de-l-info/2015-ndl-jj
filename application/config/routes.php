@@ -100,6 +100,10 @@ $route['connexion/(:num)/(:any)'] = 'account/login/$1/$2';
 $route['deconnexion'] = 'account/logout';
 $route['mon-compte'] = 'account/update';
 
+
+//CRISE
+$route['crise/nouvelle-crise'] = 'creation_crise/index';
+
 /*CRISE*/
 $route['detail-crise/(:num)'] = 'detail_crise/index/$1';
 $route['vote-plus/(:num)/(:num)'] = 'detail_crise/plus/$1/$2';
@@ -107,6 +111,9 @@ $route['vote-moins/(:num)/(:num)'] = 'detail_crise/moins/$1/$2';
 
 /***** ADMIN *****/
 $route['admin'] = 'manage';
+
+/*DATA MINING*/
+$route['maj-bdd'] = 'data_mining/update_bdd';
 
 $route['admin/clients'] = 'manage_users';
 $route['admin/clients/nouveau_client'] = 'manage_users/add';

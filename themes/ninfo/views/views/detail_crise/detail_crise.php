@@ -152,9 +152,9 @@ if (!$crise) {
 	var initialize;
 	 
 	initialize = function(){
-		var latLng = new google.maps.LatLng(<?= $crise->longitude ?>, <?= $crise->latitude ?>); // Correspond au coordonnées de Lille
+		var latLng = new google.maps.LatLng(<?= $crise->latitude ?>, <?= $crise->longitude ?>); // Correspond au coordonnées de Lille
 		var myOptions = {
-		zoom      : 5,
+		zoom      : 10,
 		center    : latLng,
 		mapTypeId : google.maps.MapTypeId.TERRAIN, // Type de carte, différentes valeurs possible HYBRID, ROADMAP, SATELLITE, TERRAIN
 		maxZoom   : 20
@@ -169,7 +169,7 @@ if (!$crise) {
 		fillOpacity: 0.35,
 		map: map,
 		center: latLng,
-		radius: <?= $crise->rayon_en_metres ?> 
+		radius: 1000
 	});
 	 
 	};

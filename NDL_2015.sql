@@ -87,6 +87,22 @@ CREATE TABLE `vote` (
   `est_positif` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `tweet`
+--
+
+CREATE TABLE `tweet` (
+`id` int(11) NOT NULL,
+  `id_tweet` varchar(20) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `hashtag` varchar(50) NOT NULL,
+  `content` text NOT NULL,
+  `time` varchar(50) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+
 --
 -- Index pour les tables exportées
 --

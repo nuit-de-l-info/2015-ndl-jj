@@ -10,5 +10,4 @@ class Categorie_model extends MY_Model
 	{
 		parent::__construct();
 	}
-
 }
