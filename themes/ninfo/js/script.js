@@ -9,9 +9,6 @@ jQuery(document).ready(function($) {
 	    });
 	});
 
-	var base_url = "http://ninfo.fr/index.php/";
-	var theme_url = "http://ninfo.fr/themes/";
-
 	//Initialiation de js Chosen
 	$('select.js-chosen').chosen({
 		no_results_text: "Oups, aucun résultat !",
@@ -56,7 +53,10 @@ jQuery(document).ready(function($) {
 			  animation: google.maps.Animation.DROP
 			  });
 			 console.debug(marker);
-			  addMarker(marker,info_window);		   
+			  addMarker(marker,info_window);
+			  console.log('ttt');
+
+			 carte.setCenter(new google.maps.LatLng(data.latitude, data.longitude));		   
 		}
 		
 	};
@@ -85,11 +85,13 @@ jQuery(document).ready(function($) {
 					dataType: "json"
 				})
 				.done(function(data) {
+
 					console.debug(data);
 					build_items_map(data);
 
 				}) 
 				.fail(function(reponse) {
+					console.log(base_url+"recuperer_crise_par_id/"+id_crise_to_filter);
 					console.debug(reponse);
 				});  
 			}

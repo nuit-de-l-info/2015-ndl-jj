@@ -112,6 +112,9 @@ $route['vote-moins/(:num)/(:num)'] = 'detail_crise/moins/$1/$2';
 /***** ADMIN *****/
 $route['admin'] = 'manage';
 
+/*DATA MINING*/
+$route['maj-bdd'] = 'data_mining/update_bdd';
+
 $route['admin/clients'] = 'manage_users';
 $route['admin/clients/nouveau_client'] = 'manage_users/add';
 $route['admin/clients/modifier_client/(:num)/(:any)'] = 'manage_users/update/$1';

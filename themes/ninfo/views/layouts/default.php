@@ -8,5 +8,7 @@
             <?= $template['body']; ?>
         </div>
         <?= $template['partials']['footer']; ?>
+
+   
     </body>
 </html>
