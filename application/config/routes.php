@@ -118,11 +118,6 @@ $route['admin'] = 'manage';
 /*DATA MINING*/
 $route['maj-bdd'] = 'data_mining/update_bdd';
 
-$route['admin/clients'] = 'manage_users';
-$route['admin/clients/nouveau_client'] = 'manage_users/add';
-$route['admin/clients/modifier_client/(:num)/(:any)'] = 'manage_users/update/$1';
-$route['admin/clients/remove_client/(:num)'] = 'manage_users/remove/$1';
-
 //validation crises
 $route['admin/choisir-crise-a-valider'] = 'manage_crises/index';
 $route['admin/crise-valider/(:num)'] = 'manage_crises/validate/$1';
