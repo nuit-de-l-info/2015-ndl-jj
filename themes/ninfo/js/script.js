@@ -62,7 +62,7 @@ jQuery(document).ready(function($) {
 					fillOpacity: 0.35,
 					map: carte,
 					center: position,
-					radius: 1000
+					radius: 1000 * data.rayon_en_metres
 				});
 
 			 carte.setCenter(new google.maps.LatLng(data.latitude, data.longitude));		   

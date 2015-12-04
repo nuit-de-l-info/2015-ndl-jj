@@ -1,10 +1,24 @@
 jQuery(document).ready(function($) {
    // On vérifie si le navigateur supporte la géolocalisation
+
+   function geo(position) {
+    creerMap(position.coords.latitude, position.coords.longitude);
+   }
+
    if(navigator.geolocation) {
-    
-    function hasPosition(position) {
+    navigator.geolocation.getCurrentPosition(geo);
+   }
+    creerMap(48.858093 , 2.294694);
+
+  function maPosition(latitude, longitude) {
+    $('#latitude').val(latitude);
+    $('#longitude').val(longitude);
+  }
+
+  
+  function creerMap(latitude, longitude) {
     // Instanciation
-     var point = new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+     var point = new google.maps.LatLng(latitude, longitude),
      
      // Ajustage des paramètres
      myOptions = {
@@ -23,15 +37,25 @@ jQuery(document).ready(function($) {
       // Texte du point
       title: "Vous êtes ici"
       });
-     maPosition(position);
-    }
-    navigator.geolocation.getCurrentPosition(hasPosition);
-   }
+     maPosition(latitude, longitude);
 
-  function maPosition(position) {
-    latitude = position.coords.latitude;
-    longitude = position.coords.longitude;
-    $('#latitude').val(latitude);
-    $('#longitude').val(longitude);
+     google.maps.event.addListener(map, 'click', function(event) {
+            deplacerMarqueur(event.latLng, marker, map);
+        });
+    }
+  
+    function deplacerMarqueur(location, marker, map) {
+            if (marker == undefined){
+                marker = new google.maps.Marker({
+                    position: location,
+                    map: map,
+                    animation: google.maps.Animation.DROP
+                });
+            }
+            else{
+                marker.setPosition(location);
+            }
+            maPosition(location.lat(), location.lng());
+            map.setCenter(location);
   }
 });

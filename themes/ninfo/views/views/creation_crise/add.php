@@ -19,7 +19,7 @@
 <div class="container">
 	<div class="row">
 		<h3>Déclaration d'une nouvelle crise</h3>
-			<?= form_open("http://ninfo.fr/index.php/crise/nouvelle-crise", array('role' => 'form','class' => 'form-horizontal col-xs-12')); ?>
+			<?= form_open(site_url('crise/nouvelle-crise'), array('role' => 'form','class' => 'form-horizontal col-xs-12')); ?>
 				<div class="col-xs-12 col-sm-6">
 					<div class="row">
 						<div class="form-group col-xs-12">
@@ -31,6 +31,14 @@
 						<div class="form-group col-xs-12">
 						    <label for="description_crise">Description crise</label>
 						    <textarea class="form-control" name="description_crise" id="description_crise" tabindex="3"><?php echo $crisis_description; ?></textarea>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-xs-12">
+						    <label for="rayon">Rayon d'action</label>
+						    <div class="row">
+						   		<div class="col-xs-4"><input type="text" class="form-control" id="rayon" name="rayon"/></div>
+							</div>
 						</div>
 					</div>
 					<div class="row">
@@ -63,8 +71,15 @@
 						   <input class="form-control" type="text" id="twitter" name="twitter" value="<?php echo $crisis_twitter;?>" placeholder="@nom_prenom" tabindex="7"/>
 						</div>
 					</div>
-					<input type="hidden" id="latitude" name="latitude"/>
-					<input type="hidden" id="longitude" name="longitude"/>
+					<div class="row">
+						<div class="form-group col-xs-12">
+							<label for="latlong">Latitude/Longitude</label>
+						   		<div class="row">
+									<div class="col-xs-4"><input type="text" class="form-control" id="latitude" name="latitude" readonly/></div>
+									<div class="col-xs-4"><input type="text" class="form-control" id="longitude" name="longitude" readonly /></div>
+								</div>
+						</div>
+					</div>
 					<div class="row">
 						<div class="form-group col-xs-4">
 							<button type="submit" class="btn btn-block btn-success" name="ajouter_crise" value="sent" tabindex="8">
@@ -79,4 +94,4 @@
 		<?= form_close(); ?>
 	</div>
 </div>
-<script src="/themes/ninfo/js/script_googlemap.js"></script>
+<script src="<?= base_url('themes/ninfo/js/script_googlemap.js')?>"></script>
