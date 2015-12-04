@@ -33,7 +33,7 @@ if (!$crise) {
 			</tbody>
 		</table>
 
-	<div class="jumbotron">
+	<div id="jumbotron" class="jumbotron">
 		<div class="row">
 			<div class="col-xs-12 col-md-10">
 				<h1><?= $crise->nom ?></h1>
@@ -64,7 +64,7 @@ if (!$crise) {
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12 col-md-6">
-			<div class="panel panel-default">
+			<div id="panel_commentaire" class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">Commentaires Facebook, Twitter</h3>
 				</div>
@@ -252,7 +252,7 @@ if (!$crise) {
 			}
 		);
 
-		$("#h1").mouseenter(
+		$("#jumbotron").mouseenter(
 			function() {
 				sound2.stop();
 				sound1.stop();
@@ -262,7 +262,7 @@ if (!$crise) {
 			}
 		);
 
-		$("#description").mouseenter(
+		$("#panel_commentaire").mouseenter(
 			function() {
 				sound2.stop();
 				sound1.stop();
