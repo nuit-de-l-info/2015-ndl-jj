@@ -3,6 +3,7 @@
 		<div class="container">
 			<div class="navbar-header"><a class="navbar-brand" href="/">InfoCrises</a></div>
 			<ul class="nav navbar-nav navbar-right">
+				<li><a href="/index.php/trombinoscope">Trombinoscope</a></li>
 				<li><a href="/index.php/admin/choisir-crise-a-valider">Administration</a></li>
 				<li><a href="/index.php/connexion">Connexion</a></li>
 			</ul>
