@@ -1,6 +1,3 @@
-<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-<script src="<?= site_url('themes/ninfo/js/script_googlemap.js') ?>"></script>
-
 <?php
 	if(isset($values_form)){
 		$crisis_name = ($values_form['nom_crise'] !== '' ? $values_form['nom_crise'] : '');
@@ -82,3 +79,4 @@
 		<?= form_close(); ?>
 	</div>
 </div>
+<script src="/themes/ninfo/js/script_googlemap.js"></script>
